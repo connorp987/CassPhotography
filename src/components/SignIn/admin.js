@@ -110,7 +110,7 @@ class SignInFormBase extends Component {
             <Form.Item>
               <span>
                 <Checkbox>Remember me</Checkbox>{" "}
-                <Link style={{ color: "#1890ff" }} to={ROUTES.HOME}>
+                <Link style={{ color: "#1890ff" }} to={ROUTES.LANDING}>
                   Forgot Password?
                 </Link>
               </span>

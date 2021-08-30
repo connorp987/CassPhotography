@@ -2,7 +2,10 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import * as ROUTES from "../constants/routes";
 import { withAuthentication } from './Session';
 
+import SignInPage from './SignIn/admin';
 import admin from './Admin/admin'
+import Navigation from './Navigation/nav'
+import { Image } from 'antd';
 
 function App() {
   const NotFound = () => (
@@ -15,13 +18,20 @@ function App() {
   );
 
   const Home = () => (
-    <div>test11</div>
+    <div><Image
+      width={200}
+      src='./CassAndI.jpg'
+      preview={{
+        src: './CassAndI.jpg',
+      }}
+    /></div>
   )
 
   //<Route path='/test/:id' component={ProductView} />
   return (
     <Router>
       <div className="App">
+        <Navigation />
 
         <Switch>
           <Route
@@ -29,12 +39,8 @@ function App() {
             path={ROUTES.LANDING}
             component={Home}
           />
-          <Route
-            exact
-            path={ROUTES.ADMIN}
-            component={admin}
-          />
-
+          <Route path={ROUTES.ADMIN} component={admin} />
+          <Route path={ROUTES.SIGN_IN} component={SignInPage} />
 
           <Route component={NotFound} />
 
