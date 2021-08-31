@@ -88,19 +88,16 @@ app
     firebase.ref(`/users/${req.body.user.uid}/categories`).once(
       "value",
       function (snapshot) {
-        //console.log(snapshot.val())
         res.send(snapshot.val());
-      },
-      function (errorObject) {
-        //console.log("The read failed: " + errorObject.code);
       }
     );
   })
   .post('/addToACategory', (req, res) => {
+    console.log(req.body.updatedProduct)
     firebase
       .ref(`/users/${req.body.user.uid}/pictures`)
-      .child(`/${req.body.productData.uid}`)
-      .update(req.body.productData);
+      .child(`/${req.body.updatedProduct.uid}`)
+      .update(req.body.updatedProduct);
     res.write(JSON.stringify({ sucess: "success" }));
     res.end()
   })
