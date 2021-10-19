@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <FirebaseContext.Provider value={new Firebase()}>
-    <App />
+    <App style={{backgroundColor: '#ecede8'}}/>
   </FirebaseContext.Provider>,
   document.getElementById('root')
 );

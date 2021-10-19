@@ -6,6 +6,7 @@
 /.pnp
 .pnp.js
 
+/api/serviceAccount.json
 serviceAccount.json
 
 

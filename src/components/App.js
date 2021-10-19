@@ -6,6 +6,8 @@ import SignInPage from './SignIn/admin';
 import admin from './Admin/admin'
 import Navigation from './Navigation/nav'
 import { Image } from 'antd';
+import Home from './Home/home'
+import { height } from "dom-helpers";
 
 function App() {
   const NotFound = () => (
@@ -17,38 +19,31 @@ function App() {
     </div>
   );
 
-  const Home = () => (
-    <div><Image
-      width={200}
-      src='./CassAndI.jpg'
-      preview={{
-        src: './CassAndI.jpg',
-      }}
-    /></div>
-  )
-
   //<Route path='/test/:id' component={ProductView} />
   return (
-    <Router>
-      <div className="App">
-        <Navigation />
+    <div style={{background: '#ecede8', height: '100'}}>
+      <Router>
+        <div className="App">
+          <Navigation />
 
-        <Switch>
-          <Route
-            exact
-            path={ROUTES.LANDING}
-            component={Home}
-          />
-          <Route path={ROUTES.ADMIN} component={admin} />
-          <Route path={ROUTES.SIGN_IN} component={SignInPage} />
+          <Switch>
+            <Route
+              exact
+              path={ROUTES.LANDING}
+              component={Home}
+            />
+            <Route path={ROUTES.ADMIN} component={admin} />
+            <Route path={ROUTES.SIGN_IN} component={SignInPage} />
 
-          <Route component={NotFound} />
+            <Route component={NotFound} />
 
-        </Switch>
-      </div>
+          </Switch>
+        </div>
 
 
-    </Router>
+      </Router>
+    </div>
+
   );
 }
 
