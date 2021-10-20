@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { InputNumber, Input } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
-import firebase from "firebase/app";
+import firebase from "firebase/compat/app";
 import "firebase/storage";
 import { withAuthorization } from '../Session';
 import * as ROUTES from '../../constants/routes';
@@ -21,8 +21,11 @@ function CreateProduct() {
     event.preventDefault();
     console.log(event)
     const data = new FormData();
-    data.append('file', event.target.files[0]);
-    console.log(event.target.files[0])
+    if (event.target.file[0] != undefined) {
+      data.append('file', event.target.files[0]);
+      console.log(event.target.files[0])
+    }
+    
     axios.post('http://localhost:4000/upload', data)
       .then((res) => {
         setPhotos([res.data, ...photos])

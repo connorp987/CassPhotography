@@ -1,7 +1,7 @@
-import app from 'firebase/app';
+import app from 'firebase/compat/app';
 import FirebaseContext, { withFirebase } from './context';
-import 'firebase/auth';
-import 'firebase/database';
+import 'firebase/compat/auth';
+import 'firebase/compat/database';
 
 
 const config = {
