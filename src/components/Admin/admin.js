@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { InputNumber, Input } from 'antd';
-import { UploadOutlined } from '@ant-design/icons';
-import firebase from "firebase/compat/app";
+import { Input } from 'antd';
 import "firebase/storage";
 import { withAuthorization } from '../Session';
 import * as ROUTES from '../../constants/routes';
@@ -21,7 +19,7 @@ function CreateProduct() {
     event.preventDefault();
     console.log(event)
     const data = new FormData();
-    if (event.target.file[0] != undefined) {
+    if (event.target.file[0] !== undefined) {
       data.append('file', event.target.files[0]);
       console.log(event.target.files[0])
     }
@@ -32,7 +30,6 @@ function CreateProduct() {
       });
   }
 
-  const test = (<div>test</div>)
   return (
     <div>
 
@@ -54,7 +51,7 @@ function CreateProduct() {
         {photos.map(pho => {
           console.log(photos)
           return (
-            <img src={`http://localhost:4000/${pho.src}`} />
+            <img alt={pho.src + "wow"} src={`http://localhost:4000/${pho.src}`} />
           )
         })}
       </div>

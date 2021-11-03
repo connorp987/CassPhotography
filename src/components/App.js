@@ -5,9 +5,7 @@ import { withAuthentication } from './Session';
 import SignInPage from './SignIn/admin';
 import admin from './Admin/admin'
 import Navigation from './Navigation/nav'
-import { Image } from 'antd';
 import Home from './Home/home'
-import { height } from "dom-helpers";
 
 function App() {
   const NotFound = () => (

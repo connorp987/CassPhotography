@@ -4,7 +4,7 @@ import { AuthUserContext } from "../Session";
 export default function Home() {
   const [photos, setPhotos] = useState([])
   const [uid, setUid] = useState('');
-  const [admin, setAdmin] = useState(false);
+  //const [admin, setAdmin] = useState(false);
 
   useEffect(() => {
     fetch('http://localhost:4000/test')
@@ -30,7 +30,7 @@ export default function Home() {
         .then(res => res.json())
         .then(json => {
           if (json.admin === true) {
-            setAdmin(true);
+            //setAdmin(true);
             //console.log(json.admin);
             //return true
           }

@@ -8,6 +8,7 @@
 
 /api/serviceAccount.json
 serviceAccount.json
+yarn.lock
 
 
 # testing
